@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSP</title>
+</head>
+<body>
+    <table>
+        <tr>
+           <th>Name</th>
+           <th>Best Route</th>
+           <th>Distance</th>
+           <th>Time(ms)</th>
+        </tr>
+        {% for x, y in data.items() %}
+        <tr>
+           <td>{{ x }}</td>
+           <td>{{ y.0 }}</td>
+           <td>{{ y.1 }}</td>
+           <td>{{ y.2 }}</td>
+        </tr>
+        {% endfor %}
+     </table>
+</body>
+</html>

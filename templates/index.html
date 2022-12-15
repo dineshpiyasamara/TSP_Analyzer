@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSP</title>
+</head>
+<body>
+    {% if not number %}
+    <form method="POST">
+        <input name="text">
+        <input type="submit" name="btn" value="Submit">
+    </form>
+    {% else %}
+    <form method="POST">
+        <table>
+            {% for p in range(number) %}
+            <tr>
+                {% for n in range(number) %}
+                    {% if p == 0 %}
+                        <td>{{ names[p][n] }}</td>
+                    {% elif n == 0 %}
+                        <td>{{ names[p][n] }}</td>
+                    {% else %}
+                        <td><input type="text" name={{ names[p][n] }}></td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <input type="text" name="elements" value={{ names[-1][-1] }} hidden>
+        <input type="submit" name="btn" value="Calculate">
+    </form>
+    {% endif %}
+</body>
+</html>
